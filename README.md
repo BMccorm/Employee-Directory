@@ -1,6 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+TEST TEST TSET
 ## Available Scripts
+https://bmccorm.github.io/Employee-Directory/
 
 In the project directory, you can run:
 
