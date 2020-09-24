@@ -15,5 +15,3 @@ export default SearchBar
 
     // < form onSubmit = { this.handleSubmit } >
     // < input type = "text" value = { this.state.value } onChange = { this.handleChange } />
-
-    // < input className="form-control" type = "text" placeholder = "Search" aria - label="Search" >
