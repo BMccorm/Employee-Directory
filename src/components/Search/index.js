@@ -14,13 +14,14 @@ class Search extends Component {
     handleOnInputChange = (event) => {
         const searchItem = event.target.value;
         console.log(searchItem)
+        this.setState({ search: searchItem })
     }
 
     componentDidMount() {
         console.log("Getting employees")
         API.getEmployeeList()
             .then(res => {
-                console.log(res.data.results);
+                // console.log(res.data.results);
                 this.setState({ employee: res.data.results })
             })
             .catch(err => console.log(err));
@@ -32,12 +33,13 @@ class Search extends Component {
                 <form className="form-group d-flex mx-5 mt-3 justify-content-center">
 
                     <input type="text"
-                        defaultValue={this.state.search}
+                        value={this.state.search}
                         className="form-control col-10 mr-2"
                         placeholder="Search"
                         onChange={this.handleOnInputChange} />
                 </form>
                 <SearchResults
+                    search={this.state.search}
                     employee={this.state.employee} />
             </div>
         )

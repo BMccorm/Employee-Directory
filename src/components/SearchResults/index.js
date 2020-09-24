@@ -1,12 +1,16 @@
 import React from "react";
 import "./style.css";
-import Search, { searchItem } from "../Search/index"
+// import searchItem from "../Search/index"
 
 function SearchResults(props) {
-  let filteredEmployee = this.props.employee.filter(
+  console.log(props)
+  let filteredEmployee = props.employee.length ? props.employee.filter(
     (result) => {
-      result.indexOf(searchItem) !== -1
-    });
+      if (!props.search) {
+        return result
+      } else if (result.name.first.toLowerCase().includes(props.search.toLowerCase)) { return result }
+
+    }) : []
 
   return (
 
@@ -23,8 +27,8 @@ function SearchResults(props) {
       </thead>
       <tbody>
         {
-          filteredEmployee.map(result =>
-            <tr key={result}>
+          filteredEmployee.map((result, i) =>
+            <tr key={i}>
               <td><img alt="Employee" src={result.picture.medium} className="img-fluid" /></td>
               <td>{result.name.first}</td>
               <td>{result.name.last}</td>
