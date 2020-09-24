@@ -4,7 +4,7 @@ import "./footer.css"
 function Footer() {
     return (
         <div className="footer">
-            <p>Footer</p>
+            <p> © 2020 Employee Directory</p>
         </div>
     )
 };

@@ -10,7 +10,7 @@ export default {
     //     return axios.get("https://dog.ceo/api/breed/" + breed + "/images");
     // },
     getEmployeeList: function () {
-        return axios.get("https://randomuser.me/api/?page=3&results=10&seed=abc");
+        return axios.get("https://randomuser.me/api/?results=50&nat=us");
     }
 };
 

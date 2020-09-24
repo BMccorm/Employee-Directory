@@ -3,7 +3,13 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: red;
+  background-color:  rgba(78, 78, 78, 0.9);
   color: white;
   text-align: center;
+}
+.footer p {
+    padding-top: 10px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
 }
