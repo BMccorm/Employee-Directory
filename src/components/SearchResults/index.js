@@ -1,9 +1,15 @@
 import React from "react";
 import "./style.css";
+import Search, { searchItem } from "../Search/index"
 
 function SearchResults(props) {
+  let filteredEmployee = this.props.employee.filter(
+    (result) => {
+      result.indexOf(searchItem) !== -1
+    });
 
   return (
+
     <table className="table mx-4 ">
       <thead>
         <tr>
@@ -16,15 +22,16 @@ function SearchResults(props) {
         </tr>
       </thead>
       <tbody>
-        {props.employee.map(result =>
-          <tr key={result}>
-            <td><img alt="Employee" src={result.picture.medium} className="img-fluid" /></td>
-            <td>{result.name.first}</td>
-            <td>{result.name.last}</td>
-            <td>{result.email}</td>
-            <td>{result.phone}</td>
+        {
+          filteredEmployee.map(result =>
+            <tr key={result}>
+              <td><img alt="Employee" src={result.picture.medium} className="img-fluid" /></td>
+              <td>{result.name.first}</td>
+              <td>{result.name.last}</td>
+              <td>{result.email}</td>
+              <td>{result.phone}</td>
 
-          </tr>)}
+            </tr>)}
       </tbody>
     </table>
 

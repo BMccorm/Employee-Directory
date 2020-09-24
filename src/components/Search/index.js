@@ -14,7 +14,6 @@ class Search extends Component {
     handleOnInputChange = (event) => {
         const searchItem = event.target.value;
         console.log(searchItem)
-
     }
 
     componentDidMount() {
