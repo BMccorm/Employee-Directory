@@ -4,7 +4,7 @@ import "./style.css";
 function SearchResults(props) {
 
   return (
-    <table className="table">
+    <table className="table mx-4 ">
       <thead>
         <tr>
           <th scope="col">Photo</th>
