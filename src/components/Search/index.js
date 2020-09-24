@@ -33,7 +33,7 @@ class Search extends Component {
                 <form className="form-group d-flex mx-5 mt-3 justify-content-center">
 
                     <input type="text"
-                        value={this.state.search}
+                        defaultValue={this.state.search}
                         className="form-control col-10 mr-2"
                         placeholder="Search"
                         onChange={this.handleOnInputChange} />
