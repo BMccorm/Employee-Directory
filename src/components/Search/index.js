@@ -13,10 +13,13 @@ class Search extends Component {
     };
 
     componentDidMount() {
+        console.log("Getting employees")
         API.getEmployeeList()
-            .then(res => this.setState({ employee: res.data.message }))
+            .then(res => {
+                console.log(res.data.results);
+                this.setState({ employee: res.data.results })
+            })
             .catch(err => console.log(err));
-
     }
 
     render() {
@@ -29,4 +32,5 @@ class Search extends Component {
     }
 }
 
-export default Search 
+export default Search
+

@@ -10,7 +10,7 @@ export default {
     //     return axios.get("https://dog.ceo/api/breed/" + breed + "/images");
     // },
     getEmployeeList: function () {
-        return axios.get("https://randomuser.me/api");
+        return axios.get("https://randomuser.me/api/?page=3&results=10&seed=abc");
     }
 };
 
@@ -19,3 +19,4 @@ export default {
 // getBaseBreedsList: function () {
 //     return axios.get("https://dog.ceo/api/breeds/list");
 // }
+
