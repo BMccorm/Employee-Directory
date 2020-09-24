@@ -3,7 +3,6 @@ import "./search.css"
 import API from "../../utils/API";
 import SearchResults from "../SearchResults/index"
 
-
 class Search extends Component {
 
     state = {
@@ -11,6 +10,12 @@ class Search extends Component {
         employee: [],
 
     };
+
+    handleOnInputChange = (event) => {
+        const searchItem = event.target.value;
+        console.log(searchItem)
+
+    }
 
     componentDidMount() {
         console.log("Getting employees")
@@ -25,6 +30,14 @@ class Search extends Component {
     render() {
         return (
             <div>
+                <form className="form-group d-flex mx-5 mt-3 justify-content-center">
+
+                    <input type="text"
+                        value={this.state.search}
+                        className="form-control col-10 mr-2"
+                        placeholder="Search"
+                        onChange={this.handleOnInputChange} />
+                </form>
                 <SearchResults
                     employee={this.state.employee} />
             </div>
