@@ -3,14 +3,13 @@ import "./style.css";
 // import searchItem from "../Search/index"
 
 function SearchResults(props) {
-  console.log(props)
-  let filteredEmployee = props.employee.length ? props.employee.filter(
-    (result) => {
-      if (!props.search) {
-        return result
-      } else if (result.name.first.toLowerCase().includes(props.search.toLowerCase)) { return result }
 
-    }) : []
+  let filteredEmployee = props.employee.length ? props.employee.filter((result) => {
+    if (!props.search) {
+      console.log(result)
+      return result
+    } else if (result.name.first.toLowerCase().includes(props.search.toLowerCase())) { return result }
+  }) : []
 
   return (
 
