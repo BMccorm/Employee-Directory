@@ -4,11 +4,11 @@ import "./style.css";
 
 function SearchResults(props) {
 
-  // let filteredEmployee = props.employee.length ? props.employee.filter((result) => {
-  //   if (!props.search) {
-  //     return result
-  //   } else if (result.name.first.toLowerCase().includes(props.search.toLowerCase())) { return result }
-  // }) : []
+  let filteredEmployee = props.employee.length ? props.employee.filter((result) => {
+    if (!props.search) {
+      return result
+    } else if (result.name.first.toLowerCase().includes(props.search.toLowerCase())) { return result }
+  }) : []
 
   return (
 
@@ -25,7 +25,7 @@ function SearchResults(props) {
       </thead>
       <tbody>
         {
-          props.employee.map((result, i) =>
+          filteredEmployee.map((result, i) =>
             <tr key={i}>
               <td><img alt="Employee" src={result.picture.medium} className="img-fluid" /></td>
               <td>{result.name.first}</td>
