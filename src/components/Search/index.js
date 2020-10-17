@@ -3,6 +3,7 @@ import "./search.css"
 import API from "../../utils/API";
 import SearchResults from "../SearchResults/index"
 
+
 class Search extends Component {
 
     state = {
@@ -11,10 +12,31 @@ class Search extends Component {
 
     };
 
+
     handleOnInputChange = (event) => {
         const searchItem = event.target.value;
         console.log(searchItem)
         this.setState({ search: searchItem })
+    }
+
+
+    handleTextInput(event) {
+        this.setState({ filterString: event.target.value });
+    }
+
+    handleOnClick(event) {
+        let fieldName = event.target.getAttribute('fieldname');
+        let properties = Array.isArray(fieldName) ? fieldName : fieldName.split(".")
+
+        let sortingEmployees = [].concat(this.state.employee);
+        sortingEmployees = sortingEmployees.sort((a, b) => {
+            let aVal = properties.reduce((prev, curr) => prev && prev[curr], a);
+            let bVal = properties.reduce((prev, curr) => prev && prev[curr], b);
+            if (aVal < bVal) { return -1; }
+            if (aVal > bVal) { return 1; }
+            return 0;
+        });
+        this.setState({ employee: sortingEmployees });
     }
 
     componentDidMount() {
